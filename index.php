@@ -11,15 +11,13 @@ $temp=file_get_contents("student.csv");
 $temp=explode("\n",$temp);
 foreach($temp as $temp2){
 	$temp2=str_getcsv($temp2);
-	$studentlist[1*$temp2[0]][1*$temp2[1]]=$temp2[2];
+	if ($temp2[0] !== null) $studentlist[1*$temp2[0]][1*$temp2[1]]=$temp2[2];
 }
 
 $inputlist=file_get_contents($file.".csv");
-$inputlist=iconv("BIG5","UTF-8",$inputlist);
 $inputlist=str_replace(",",' ,',$inputlist);
 $inputlist=explode("\n",$inputlist);
 unset($inputlist[0]);
-unset($inputlist[count($inputlist)]);
 
 
 $output="";
@@ -65,6 +63,7 @@ function formatscore($n,$unit){
 
 foreach($inputlist as $input){
 	$input=str_getcsv($input);
+	if ($input[0] === null) continue;
 	foreach($input as $index => $temp){
 		$input[$index]=str_replace(" ","",$temp);
 	}
