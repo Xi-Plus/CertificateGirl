@@ -73,7 +73,7 @@ foreach($inputlist as $input){
 	$temp=str_replace("{grade}",num2chi($grade),$temp);
 	$temp=str_replace("{class}",num2chi($class),$temp);
 	if($file=="one"){
-		if($replacename)$temp=str_replace("{name}",$studentlist[$input[0]][$input[1]],$temp);
+		if($replacename&&trim($input[1])!="")$temp=str_replace("{name}",$studentlist[$input[0]][$input[1]],$temp);
 		else $temp=str_replace("{name}",$input[1],$temp);
 		$temp=str_replace("{S_student}",S_student($input[1]),$temp);
 		$temp=str_replace("{schoolyear}",$input[2],$temp);
