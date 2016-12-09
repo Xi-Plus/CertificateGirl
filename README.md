@@ -13,10 +13,10 @@
 ## [正確的食用方法](https://zh.moegirl.org/zh-hant/%E4%B8%80%E5%AE%9A%E6%98%AF%E6%88%91%E6%89%93%E5%BC%80%E7%9A%84%E6%96%B9%E5%BC%8F%E4%B8%8D%E5%AF%B9)
 1. 將整個**獎狀娘**下載至你的[Windows娘](https://zh.wikipedia.org/zh-tw/Windows%E5%A8%98)上
 2. 如有需要班級座號自動取代為姓名功能，填妥```student.csv```，在```index.php```裡設定```$replacename```為```true```，否則為```false```（此功能僅限單人獎狀）
-3. 選擇印製單人或四人獎狀
+3. 選擇印製單人、班級、四人獎狀
  * 若是單人獎狀，填妥```one.csv```，在```index.php```裡設定```$file```為```"one"```
+ * 若是班級獎狀，填妥```one.csv```，```name```欄留空，在```index.php```裡設定```$file```為```"one"```
  * 若是四人獎狀，填妥```four.csv```，在```index.php```裡設定```$file```為```"four"```
  * 注意```.csv```檔案編碼需為```UTF-8-BOM```，可使用```Notepad++```轉換
 4. 使用**PHP娘**執行```php index.php```，將產生```output.xml```
 5. 使用**Excel娘**打開```output.xml```，預覽列印調整邊界確認後即可列印
-6. name儲存格若為空白，就不會出現"同學"。(適用於接力)
